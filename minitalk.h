@@ -6,14 +6,14 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 20:48:59 by ting              #+#    #+#             */
-/*   Updated: 2023/12/14 20:50:54 by ting             ###   ########.fr       */
+/*   Updated: 2023/12/28 14:25:55 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINITALK_H
 # define MINITALK_H
 
-# include "libft/libft.h"
+# include "./libft/libft.h"
 # include <signal.h>
 
 #endif

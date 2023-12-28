@@ -6,8 +6,13 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 20:39:32 by ting              #+#    #+#             */
-/*   Updated: 2023/12/14 20:39:39 by ting             ###   ########.fr       */
+/*   Updated: 2023/12/28 14:21:44 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "minitalk.h"
 
+int	main(void)
+{
+	ft_printf("THE SERVER PID IS: %d", getpid());
+}
