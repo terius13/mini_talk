@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   server_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/14 20:39:32 by ting              #+#    #+#             */
-/*   Updated: 2023/12/30 15:06:28 by ting             ###   ########.fr       */
+/*   Created: 2023/12/30 16:54:43 by ting              #+#    #+#             */
+/*   Updated: 2023/12/31 18:49:33 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
-#include <unistd.h>
+#include "minitalk_bonus.h"
 
-void	sig_handler(int sig)
+void	sighandler(int sig, siginfo_t *info, void *ucontent)
 {
 	static int	character = 0;
 	static int	i = 0;
@@ -21,18 +20,18 @@ void	sig_handler(int sig)
 	if (sig == SIGUSR1)
 	{
 		character = character << 1;
-		i++;
 	}
 	else if (sig == SIGUSR2)
 	{
 		character = (character << 1) | 1;
-		i++;
 	}
+	i++;
 	if (i == 8)
 	{
 		ft_printf("%c", character);
 		i = 0;
 		character = 0;
+		kill(info->si_pid, SIGUSR2);
 	}
 }
 
@@ -40,12 +39,12 @@ int	main(void)
 {
 	struct sigaction	sa;
 
-	sa.sa_handler = sig_handler;
-	sa.sa_flags = 0;
+	sa.sa_sigaction = sighandler;
+	sa.sa_flags = SA_SIGINFO;
 	sigemptyset(&sa.sa_mask);
 	sigaction(SIGUSR1, &sa, NULL);
 	sigaction(SIGUSR2, &sa, NULL);
-	ft_printf("THE SERVER PID IS: %d\n", getpid());
+	ft_printf("THE SERVER_BONUS PID IS: %d\n", getpid());
 	while (1)
 	{
 		pause();

@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/14 20:39:53 by ting              #+#    #+#             */
-/*   Updated: 2023/12/30 14:52:05 by ting             ###   ########.fr       */
+/*   Created: 2023/12/30 16:54:28 by ting              #+#    #+#             */
+/*   Updated: 2023/12/31 20:32:36 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "minitalk_bonus.h"
 
 void	sendsig(int serverpid, char *str)
 {
 	int	i;
 	int	rshift;
+	int	character;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
+		character = (unsigned char)str[i];
 		rshift = 7;
 		while (rshift >= 0)
 		{
-			if ((str[i] >> rshift) & 1)
+			if ((character >> rshift) & 1)
+			{
 				kill(serverpid, SIGUSR2);
+			}
 			else
+			{
 				kill(serverpid, SIGUSR1);
+			}
 			rshift--;
 			usleep(300);
 		}
@@ -34,15 +40,34 @@ void	sendsig(int serverpid, char *str)
 	}
 }
 
+void	receivesig(int signum)
+{
+	if (signum == SIGUSR2)
+	{
+		ft_printf("Character has been received by server\n");
+	}
+}
+
 int	main(int argc, char **argv)
 {
-	int	serverpid;
+	struct sigaction	sa;
+	int					serverpid;
 
+	sa.sa_handler = receivesig;
+	sigemptyset(&sa.sa_mask);
+	sa.sa_flags = 0;
+	sigaction(SIGUSR2, &sa, NULL);
 	if (argc == 3)
 	{
 		serverpid = ft_atoi(argv[1]);
 		sendsig(serverpid, argv[2]);
 	}
 	else
-		ft_printf("Invalid Inputs\n");
+	{
+		ft_printf("INVALID INPUTS");
+	}
+	while (1)
+	{
+		pause();
+	}
 }

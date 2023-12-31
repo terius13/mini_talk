@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_prtunnbr_printf.c                               :+:      :+:    :+:   */
+/*   minitalk_bonus.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/20 22:41:23 by ting              #+#    #+#             */
-/*   Updated: 2023/12/30 15:03:56 by ting             ###   ########.fr       */
+/*   Created: 2023/12/30 16:56:10 by ting              #+#    #+#             */
+/*   Updated: 2023/12/31 18:35:44 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef MINITALK_BONUS_H
+# define MINITALK_BONUS_H
 
-int	ft_prtunnbr_printf(unsigned int nbr)
-{
-	int				count;
-	unsigned int	n;
+# include <signal.h>
+# include "./libft/libft.h"
 
-	count = 0;
-	n = nbr;
-	if (n > 9)
-		count += ft_prtunnbr_printf(n / 10);
-	n = n % 10 + '0';
-	count += ft_prtchar_printf(n);
-	return (count);
-}
+#endif

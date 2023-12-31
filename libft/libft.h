@@ -6,7 +6,7 @@
 /*   By: ting <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 20:13:55 by ting              #+#    #+#             */
-/*   Updated: 2023/12/20 23:06:57 by ting             ###   ########.fr       */
+/*   Updated: 2023/12/30 14:59:26 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,12 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-int	ft_printf(const char *str, ...);
-int	ft_checker(va_list list, char format);
-int	ft_prtstr_printf(char *str);
-int	ft_prtchar_printf(char c);
-int	ft_prtnbr_printf(int nbr);
-int	ft_prtunnbr_printf(unsigned int nbr);
-int	ft_prthex_printf(unsigned long n, char format);
+int		ft_printf(const char *str, ...);
+int		ft_checker(va_list list, char format);
+int		ft_prtstr_printf(char *str);
+int		ft_prtchar_printf(char c);
+int		ft_prtnbr_printf(int nbr);
+int		ft_prtunnbr_printf(unsigned int nbr);
+int		ft_prthex_printf(unsigned long n, char format);
 
 #endif

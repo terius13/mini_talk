@@ -6,15 +6,16 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 22:37:43 by ting              #+#    #+#             */
-/*   Updated: 2023/12/20 23:11:20 by ting             ###   ########.fr       */
+/*   Updated: 2023/12/30 15:05:53 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 int	ft_prtnbr_printf(int nbr)
 {
+	int			count;
 	long int	n;
-	int		count;
 
 	count = 0;
 	n = nbr;

@@ -6,14 +6,15 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 22:44:58 by ting              #+#    #+#             */
-/*   Updated: 2023/12/20 22:50:00 by ting             ###   ########.fr       */
+/*   Updated: 2023/12/30 15:00:10 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 int	ft_prthex_printf(unsigned long n, char format)
 {
-	int	count;
+	int		count;
 	char	*base;
 
 	count = 0;
