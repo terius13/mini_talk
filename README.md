@@ -11,4 +11,5 @@ I did this and program the client to output a test to the terminal as well.
 It also requires the program to be able to output and accept unicode characters(such as emojis) as well, however both my mandatory and bonus are able to do this.
 
 I had alot of fun with this project as it was very interactive!
-https://giphy.com/embed/4LnVK8BxpUG3UNyLvF
+
+![giphy](https://github.com/terius13/minitalk/assets/130916943/8fab9730-04f0-45be-b21a-f8b8376b914a)
