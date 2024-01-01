@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 16:54:28 by ting              #+#    #+#             */
-/*   Updated: 2023/12/31 20:32:36 by ting             ###   ########.fr       */
+/*   Updated: 2024/01/01 15:55:56 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,9 @@ void	sendsig(int serverpid, char *str)
 		while (rshift >= 0)
 		{
 			if ((character >> rshift) & 1)
-			{
 				kill(serverpid, SIGUSR2);
-			}
 			else
-			{
 				kill(serverpid, SIGUSR1);
-			}
 			rshift--;
 			usleep(300);
 		}
@@ -43,9 +39,7 @@ void	sendsig(int serverpid, char *str)
 void	receivesig(int signum)
 {
 	if (signum == SIGUSR2)
-	{
 		ft_printf("Character has been received by server\n");
-	}
 }
 
 int	main(int argc, char **argv)
@@ -63,9 +57,7 @@ int	main(int argc, char **argv)
 		sendsig(serverpid, argv[2]);
 	}
 	else
-	{
 		ft_printf("INVALID INPUTS");
-	}
 	while (1)
 	{
 		pause();

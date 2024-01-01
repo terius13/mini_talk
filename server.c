@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 20:39:32 by ting              #+#    #+#             */
-/*   Updated: 2023/12/30 15:06:28 by ting             ###   ########.fr       */
+/*   Updated: 2024/01/01 16:00:05 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,10 @@ void	sig_handler(int sig)
 	static int	i = 0;
 
 	if (sig == SIGUSR1)
-	{
 		character = character << 1;
-		i++;
-	}
 	else if (sig == SIGUSR2)
-	{
 		character = (character << 1) | 1;
-		i++;
-	}
+	i++;
 	if (i == 8)
 	{
 		ft_printf("%c", character);

@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 16:54:43 by ting              #+#    #+#             */
-/*   Updated: 2023/12/31 18:49:33 by ting             ###   ########.fr       */
+/*   Updated: 2024/01/01 15:49:17 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,9 @@ void	sighandler(int sig, siginfo_t *info, void *ucontent)
 	static int	i = 0;
 
 	if (sig == SIGUSR1)
-	{
 		character = character << 1;
-	}
 	else if (sig == SIGUSR2)
-	{
 		character = (character << 1) | 1;
-	}
 	i++;
 	if (i == 8)
 	{
