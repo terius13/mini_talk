@@ -12,8 +12,8 @@ It also requires the program to be able to output and accept unicode characters(
 
 I had alot of fun with this project as it was very interactive!
 
-![Uploading ezgif.com-video-to-gif-converter (2).gif…]()
 
+![ezgif com-video-to-gif-converter (2)](https://github.com/terius13/minitalk/assets/130916943/86f65e70-39c6-4102-87f4-f532f19b8192)
 
 
 ![giphy](https://github.com/terius13/minitalk/assets/130916943/8fab9730-04f0-45be-b21a-f8b8376b914a)
