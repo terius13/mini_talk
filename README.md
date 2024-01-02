@@ -1,4 +1,4 @@
-# MINITALK 42 PROJECT
+# MINITALK
 
 Mandatory:
 This project is a small data exchange program using UNIX signals.
